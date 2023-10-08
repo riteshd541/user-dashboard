@@ -118,12 +118,12 @@
       "id": 20,
       "name": "Benjamin Smith",
       "email": "benjamin.smith@example.com",
-      "department": "Sales"
+      "department": "No sales"
     },
     {
-      "name": "Ritesh Dwivedi",
-      "email": "riteshd541@gmail.com",
-      "department": "HR",
+      "name": "ankush",
+      "email": "johndoe@gmail.com",
+      "department": "No sales",
       "id": 21
     }
   ]

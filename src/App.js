@@ -7,29 +7,42 @@ import "./App.css";
 function App() {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Make an HTTP GET request to fetch data from the server
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Whenever currentPage or itemsPerPage changes, update the displayed data
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const slicedRecords = records.slice(startIndex, endIndex);
+    setDisplayedRecords(slicedRecords);
+  }, [currentPage, itemsPerPage, records]);
+
+  const [displayedRecords, setDisplayedRecords] = useState([]);
+
+  const fetchData = () => {
     axios
       .get("http://localhost:8082/users")
       .then((response) => {
-        setColumns(Object.keys(response.data[0])); // Assuming the JSON response has a 'users' key
+        setColumns(Object.keys(response.data[0]));
         setRecords(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []); // The empty dependency array ensures the effect runs only once
+  };
 
   const handleDelete = (id) => {
-    // Make an HTTP DELETE request to delete the specific item by its ID
     axios
       .delete(`http://localhost:8082/users/${id}`)
       .then((response) => {
         console.log("Data deleted successfully:", response.data);
-        // After successful deletion, refresh the data to reflect the changes
-        fetchData();
+        fetchData(); // Refresh the data
         navigate("/");
       })
       .catch((error) => {
@@ -37,16 +50,10 @@ function App() {
       });
   };
 
-  const fetchData = () => {
-    axios
-      .get("http://localhost:8082/users")
-      .then((response) => {
-        setColumns(Object.keys(response.data[0])); // Assuming the JSON response has a 'users' key
-        setRecords(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+  const totalPages = Math.ceil(records.length / itemsPerPage);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
   };
 
   return (
@@ -65,7 +72,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {records.map((d, i) => (
+            {displayedRecords.map((d, i) => (
               <tr key={i}>
                 <td>{d.id}</td>
                 <td>{d.name}</td>
@@ -89,6 +96,19 @@ function App() {
             ))}
           </tbody>
         </table>
+        <div className="pagination">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`btn btn-sm ${
+                currentPage === index + 1 ? "btn-primary" : "btn-secondary"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
