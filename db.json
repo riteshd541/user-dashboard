@@ -1,0 +1,130 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "department": "HR"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 4,
+      "name": "Bob Williams",
+      "email": "bob.williams@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": 5,
+      "name": "Emily Brown",
+      "email": "emily.brown@example.com",
+      "department": "Sales"
+    },
+    {
+      "id": 6,
+      "name": "Michael Davis",
+      "email": "michael.davis@example.com",
+      "department": "HR"
+    },
+    {
+      "id": 7,
+      "name": "Sophia Wilson",
+      "email": "sophia.wilson@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": 8,
+      "name": "Oliver Lee",
+      "email": "oliver.lee@example.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 9,
+      "name": "Ava Moore",
+      "email": "ava.moore@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": 10,
+      "name": "Liam Johnson",
+      "email": "liam.johnson@example.com",
+      "department": "Sales"
+    },
+    {
+      "id": 11,
+      "name": "Ella Brown",
+      "email": "ella.brown@example.com",
+      "department": "HR"
+    },
+    {
+      "id": 12,
+      "name": "Noah Davis",
+      "email": "noah.davis@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": 13,
+      "name": "Mia Wilson",
+      "email": "mia.wilson@example.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 14,
+      "name": "James Williams",
+      "email": "james.williams@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": 15,
+      "name": "Emma Lee",
+      "email": "emma.lee@example.com",
+      "department": "Sales"
+    },
+    {
+      "id": 16,
+      "name": "Alexander Johnson",
+      "email": "alexander.johnson@example.com",
+      "department": "HR"
+    },
+    {
+      "id": 17,
+      "name": "Olivia Moore",
+      "email": "olivia.moore@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": 18,
+      "name": "William Davis",
+      "email": "william.davis@example.com",
+      "department": "Engineering"
+    },
+    {
+      "id": 19,
+      "name": "Sofia Wilson",
+      "email": "sofia.wilson@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": 20,
+      "name": "Benjamin Smith",
+      "email": "benjamin.smith@example.com",
+      "department": "Sales"
+    },
+    {
+      "name": "Ritesh Dwivedi",
+      "email": "riteshd541@gmail.com",
+      "department": "HR",
+      "id": 21
+    }
+  ]
+}
